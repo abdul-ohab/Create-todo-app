@@ -1,1 +1,94 @@
- 
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    outline: none;
+}
+
+body{
+    background-color: #333;
+    color: whitesmoke;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    background-color: #222;
+    width: 35%;
+    height: 80%;
+    text-align: center;
+    padding: 25px;
+    margin: 25px; 
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+input{
+    margin-top: 20px;
+    padding: 4px;
+    width: 60%;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn{
+    padding: 4px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: bisque;
+}
+
+input:hover{
+    background-color: pink;
+}
+input:focus::placeholder {
+    color: transparent;
+}
+
+button:hover{
+    background-color: rgb(158, 158, 19);
+    color: white;
+}
+
+.list-style{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    background-color: #333;
+    margin-left: 10%;
+    padding: 4px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.bg-success{
+    margin:10px 35px;
+    border-radius: 7px;
+    width: 80%;
+    padding: .5rem;
+    color: black;
+    background-color: #ddffdd;
+    border-left: 6px solid #04aa6d;
+}
+
+.bg-danger{
+    margin:10px 35px;
+    border-radius: 7px;
+    width: 80%;
+    padding: .5rem;
+    color: black;
+    background-color: #ddffdd;
+    border-left: 6px solid #04aa6d;
+}
+
+.list-style:hover{
+    background-color: black;
+}
