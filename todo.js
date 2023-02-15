@@ -11,4 +11,31 @@
      massageElement.textContent = "";
      massageElement.classList.remove(`bg-${status}`);
    }, 1000);
- };
+};
+
+//creat todo
+const createTodo = (todoId,todovalue) =>{
+    const todoElement = document.createElement("li");
+    todoElement.id = todoId;
+    todoElement.classList.add("list-style");
+
+    todoElement.innerHTML = `<span> ${todovalue} </span>
+    <span><button class="btn" id="deleteButton">
+    <i class="fa fa-trash"> </i></button></span>`;
+    todoLists.appendChild(todoElement);
+
+    const deleteButton = todoElement.querySelector("#deleteButton");
+    deleteButton.addEventListener("click",deleteTodo);
+}
+
+//delete todo
+const deleteTodo = (event) =>{
+    const selectedTodo = event.target.parentElement.parentElement.parentElement;
+    todoLists.removeChild(selectedTodo);
+    showMassage("todo deleted","danger");
+
+    let todos = getTodoFromlocalStroage();
+    todos = todos.filter((todo) => todo.todoId !== selectedTodo.id);
+    localStorage.setItem("mytodos", JSON.stringify(todos));
+}
+ 
