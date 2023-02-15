@@ -38,4 +38,27 @@ const deleteTodo = (event) =>{
     todos = todos.filter((todo) => todo.todoId !== selectedTodo.id);
     localStorage.setItem("mytodos", JSON.stringify(todos));
 }
- 
+
+//get todo from localStorage
+const getTodoFromlocalStroage = () =>{
+    return localStorage.getItem("mytodos")? JSON.
+    parse(localStorage.getItem("mytodos")) : [];
+}
+
+//add todo
+const todoFunction = (event) =>{
+    event.preventDefault();
+    const todoValue = todoInput.value;
+
+    //unique id
+    const todoId = Date.now().toString();
+    createTodo(todoId,todoValue);
+    showMassage("todo added","success");
+
+    const todos = getTodoFromlocalStroage(); 
+    todos.push({todoId,todoValue});
+    localStorage.setItem("mytodos", JSON.stringify(todos));
+    todoInput.value = "";
+    
+}
+
