@@ -62,3 +62,12 @@ const todoFunction = (event) =>{
     
 }
 
+//load todos
+const loadTodos = () =>{
+    const todos = getTodoFromlocalStroage();
+    todos.map((todo) => createTodo(todo.todoId,todo.todoValue))
+}
+
+//add listener
+todoForm.addEventListener("submit",todoFunction);
+window.addEventListener("DOMContentLoaded",loadTodos);
